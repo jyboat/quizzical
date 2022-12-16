@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #F5F7FB;
+}
+
+#start-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#start-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #293264;
+}
+
+#start-caption {
+  font-weight: 400;
+  font-size: 16px;
+  color: #293264;
+  margin-top: 10px;
+}
+
+#start-button {
+  width: 193px;
+  height: 52px;
+  background: #4D5B9E;
+  border-radius: 15px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #F5F7FB;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#start-button:active {
+  transform: scale(0.97, 0.97);
+}
+
+#quizzes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#quiz-question {
+  max-width: 840px;
+  margin-top: 33px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #293264;
+}
+
+#quiz-answers-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  max-width: 840px;
+}
+
+.quiz-answers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #F5F7FB;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 0.8px solid #4D5B9E;
+  margin-right: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+#breakline {
+  border: 0.8px solid #DBDEF0;
+  width: 850px;
+  margin-top: 15px;
+}
+
+#check-button {
+  width: 193px;
+  height: 52px;
+  background: #4D5B9E;
+  border-radius: 15px;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #F5F7FB;
+  cursor: pointer;
+}
+
+#check-button:active {
+  transform: scale(0.97, 0.97);
+}
+
+.results {
+  font-size: 20px;
+  font-weight: 700;
+  color: #293264;
+}
+
+.results-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.blob-one {
+  position: absolute;
+  left: 85%;
+  width: 230px;
+  height: 200px;
+  background: #FFFAD1;
+  border-radius: 100% 0% 35% 65% / 0% 95% 5% 100%
+}
+
+.blob-two {
+  position: absolute;
+  top: 75%;
+  width: 200px;
+  height: 180px;
+  background: #DEEBF8;
+  border-radius: 58% 42% 100% 0% / 11% 100% 0% 89%
+}

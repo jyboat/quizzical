@@ -1,0 +1,64 @@
+{
+    "results": [
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "To the nearest minute, how long does it take for light to travel from the Sun to the Earth?",
+            "correct_answer": "8 Minutes",
+            "incorrect_answers": [
+                "6 Minutes",
+                "2 Minutes",
+                "12 Minutes"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "The term &quot;scientist&quot; was coined in which year?",
+            "correct_answer": "1833",
+            "incorrect_answers": [
+                "1933",
+                "1942",
+                "1796"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What term is best associated with Sigmund Freud?",
+            "correct_answer": "Psychoanalysis",
+            "incorrect_answers": [
+                "Cognitive-Behavioral Therapy",
+                "Theory of Gravity",
+                "Dialectical Behavior Therapy"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What was Bruce Campbell&#039;s iconic one-liner after getting a chainsaw hand in Evil Dead 2?",
+            "correct_answer": "Groovy.",
+            "incorrect_answers": [
+                "Gnarly.",
+                "Perfect.",
+                "Nice."
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Who was the winner of &quot;Big Brother&quot; Season 10?",
+            "correct_answer": "Dan Gheesling",
+            "incorrect_answers": [
+                "Bryce Kranyik",
+                "Ryan Sutfin",
+                "Chris Mundorf"
+            ]
+        }
+    ]
+}
