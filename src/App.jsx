@@ -5,18 +5,33 @@ import { nanoid } from 'nanoid'
 import './styles.css'
 
 export default function App() {
-  // add paint blobs
   const [started, setStarted] = React.useState(false)
   const [quizArray, setQuizArray] = React.useState([])
   const [ansArray, setAnsArray] = React.useState([])
-  const [submittedQuiz, setSubmittedQuiz] = React.useState(false)
+  const [submitted, setSubmitted] = React.useState(false)
   const [correctCount, setCorrectCount] = React.useState(0)
 
+  function getQuizArray() {
+    fetch("https://opentdb.com/api.php?amount=5&difficulty=easy")
+      .then((response) => response.json())
+      .then((data) => {
+        setQuizArray(data.results)
+      })
+  }
 
-  function formatAnswers() {
-    const answerArr = []
+  React.useEffect(() => {
+    getQuizArray()
+  }, [])
+
+  React.useEffect(() => {
+    setAnsArray(formatAnswersArray)
+  }, [quizArray])
+
+  function formatAnswersArray() {
+    // concat corrent and incorrect answers
+    const answersArray = []
     quizArray.map(quiz => {
-      answerArr.push({
+      answersArray.push({
         value: quiz.correct_answer,
         correct: true,
         id: nanoid(),
@@ -26,7 +41,7 @@ export default function App() {
       })
 
       quiz.incorrect_answers.map(ans => {
-        answerArr.push({
+        answersArray.push({
           value: ans,
           correct: false,
           id: nanoid(),
@@ -36,8 +51,7 @@ export default function App() {
         })
       })
     })
-    return shuffleArray(answerArr)
-
+    return shuffleArray(answersArray)
   }
 
   // fisher yates array shuffle algorithm
@@ -53,32 +67,16 @@ export default function App() {
     return arr
   }
 
-  function getQuizArray() {
-    fetch("https://opentdb.com/api.php?amount=5&difficulty=easy")
-      .then((response) => response.json())
-      .then((data) => {
-        setQuizArray(data.results)
-      })
-  }
-
-  React.useEffect(() => {
-    getQuizArray()
-  }, [])
-
-  React.useEffect(() => {
-    setAnsArray(formatAnswers)
-  }, [quizArray])
-
   function start() {
     setStarted(true)
   }
 
   function handleSubmit() {
-    if (submittedQuiz) {
+    if (submitted) {
       // new game
       getQuizArray()
       setCorrectCount(0)
-      setSubmittedQuiz(false)
+      setSubmitted(false)
     } else {
       // check answers
       setAnsArray(prevArr => prevArr.map(ans => {
@@ -89,17 +87,19 @@ export default function App() {
           setCorrectCount(count => count + 1)
         }
       })
-      setSubmittedQuiz(true)
+      setSubmitted(true)
     }
   }
 
-
   function selectAnswer(id, qn) {
     setAnsArray(prevArr => prevArr.map(ans => {
+      // same question, other not selected options
       if (ans.qn === qn && ans.id !== id) {
         return { ...ans, isSelected: false }
+        // same question, selected option
       } else if (ans.qn === qn && ans.id === id) {
         return { ...ans, isSelected: !ans.isSelected }
+        // all other questions' options
       } else {
         return ans
       }
@@ -108,10 +108,10 @@ export default function App() {
 
   return (
     <div>
-      <div className="blob-one"></div>
-      <div className="blob-two"></div>
+      <div id="blob-one"></div>
+      <div id="blob-two"></div>
       {started ? <Quiz quizArray={quizArray} ansArray={ansArray} handleSubmit={handleSubmit}
-        selectAnswer={(id, qn) => selectAnswer(id, qn)} submittedQuiz={submittedQuiz} correctCount={correctCount} /> : <Start start={start} />}
+        selectAnswer={(id, qn) => selectAnswer(id, qn)} submitted={submitted} correctCount={correctCount} /> : <Start start={start} />}
     </div>
   )
 }
