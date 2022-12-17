@@ -128,3 +128,12 @@
   background: #DEEBF8;
   border-radius: 58% 42% 100% 0% / 11% 100% 0% 89%
 }
+
+#blob-three {
+  position: absolute;
+  top: 85%;
+  width: 150px;
+  height: 108px;
+  background: #DEEBF8;
+  border-radius: 58% 42% 100% 0% / 11% 100% 0% 89%
+}
