@@ -110,30 +110,3 @@
   gap: 30px;
   margin-top: 20px;
 }
-
-#blob-one {
-  position: absolute;
-  left: 85%;
-  width: 230px;
-  height: 200px;
-  background: #FFFAD1;
-  border-radius: 100% 0% 35% 65% / 0% 95% 5% 100%
-}
-
-#blob-two {
-  position: absolute;
-  top: 75%;
-  width: 200px;
-  height: 180px;
-  background: #DEEBF8;
-  border-radius: 58% 42% 100% 0% / 11% 100% 0% 89%
-}
-
-#blob-three {
-  position: absolute;
-  top: 85%;
-  width: 150px;
-  height: 108px;
-  background: #DEEBF8;
-  border-radius: 58% 42% 100% 0% / 11% 100% 0% 89%
-}
