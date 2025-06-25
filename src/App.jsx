@@ -108,11 +108,10 @@ export default function App() {
 
   return (
     <div>
-      <div id="blob-one"></div>
-      {!started && <div id="blob-two"></div>}
+      {!started}
       {started ? <Quiz quizArray={quizArray} ansArray={ansArray} handleSubmit={handleSubmit}
         selectAnswer={(id, qn) => selectAnswer(id, qn)} submitted={submitted} correctCount={correctCount} /> : <Start start={start} />}
-      {started && <div id="blob-three"></div>}
+      {started}
     </div>
   )
 }
